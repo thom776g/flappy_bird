@@ -10,7 +10,7 @@ class Pipe {
   Pipe(int tempX, int tempY) {
     x = tempX;
     dx = -3;
-    w = 60;
+    w = 90;
     y = tempY;
     h = 175;
   }
@@ -19,13 +19,17 @@ class Pipe {
   void render() {
     fill(255);
     rect(x, 0, w, y);
+    imageMode(CORNER);
+    fill(255, 255, 255, 0);
     rect(x, y+h, w, height-y-h);
+    image(under_pipe, x, y+h, w, height-y-h);
+    //image(under_pipe, x, 0, w, y);
   }
 
   // Opdater rørets position
   void update() {
-    if (gameStart == true){
-    x += dx;
+    if (gameStart == true) {
+      x += dx;
     }
     if (outOfCanvas() == true) {
       x = width;

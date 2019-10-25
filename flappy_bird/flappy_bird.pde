@@ -1,11 +1,13 @@
 Bird b;
 Pipe p;
 Pipe p2;
-PImage base, redbird, bg;
+PImage base, redbird, bg, under_pipe, over_pipe;
 boolean gameStart;
 
 void setup() {
   size(600, 800);
+  under_pipe = loadImage("pipe-green.png");
+  under_pipe.resize(90,310);
   bg = loadImage("background-night.png");
   bg.resize(width, height);
   base = loadImage("base.png");
