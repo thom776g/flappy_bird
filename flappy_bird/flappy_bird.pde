@@ -7,6 +7,7 @@ boolean gameStart;
 void setup() {
   size(600, 800);
   bg = loadImage("background-night.png");
+  bg.resize(width, height);
   base = loadImage("base.png");
   noStroke();
   gameStart = false;
