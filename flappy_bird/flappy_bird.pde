@@ -1,7 +1,7 @@
 Bird b;
 Pipe p;
 Pipe p2;
-PImage base, redbird, bg, under_pipe, up_pipe;
+PImage base, redbird_down, redbird_mid, redbird_up, bg, under_pipe, up_pipe;
 boolean gameStart;
 boolean hop = true;
 
@@ -23,7 +23,9 @@ void setup() {
   p2 = new Pipe(width+425);
 
 
-  redbird = loadImage("redbird-midflap.png");
+  redbird_mid = loadImage("redbird-midflap.png");
+  redbird_down = loadImage("redbird-downflap.png");
+  redbird_up = loadImage("redbird-upflap.png");
 }
 
 void draw() {
@@ -82,4 +84,3 @@ void keyReleased() {
     b.ready2flap = true;
   }
 }
-
