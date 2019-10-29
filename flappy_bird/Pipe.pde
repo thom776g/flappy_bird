@@ -18,11 +18,11 @@ class Pipe {
   // Afbild røret på canvasset
   void render() {
     fill(255);
-    rect(x, 0, w, y);
+    image(up_pipe, x, 0, w, y);
     imageMode(CORNER);
     fill(255, 255, 255, 0);
     rect(x, y+h, w, height-y-h);
-    image(under_pipe, x, y+h, w, height-y-h);
+    image(under_pipe, x, y+h);
     //image(under_pipe, x, 0, w, y);
   }
 
