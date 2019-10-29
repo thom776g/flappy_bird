@@ -1,14 +1,18 @@
 Bird b;
 Pipe p;
 Pipe p2;
-PImage base, redbird, bg, under_pipe, over_pipe;
+PImage base, redbird, bg, under_pipe, up_pipe;
 boolean gameStart;
 boolean hop = true;
 
 void setup() {
   size(600, 800);
   under_pipe = loadImage("pipe-green.png");
-  under_pipe.resize(90, 400);
+
+  under_pipe.resize(90,600);
+  up_pipe = loadImage("up-pipe.png");
+  up_pipe.resize(90,600);
+
   bg = loadImage("background-night.png");
   bg.resize(width, height);
   base = loadImage("base.png");
@@ -27,6 +31,7 @@ void draw() {
   image(bg, 0, 0, width, height);
   image(base, 0, height-112/2, 336, 112);
   image(base, 336, height-112/2, 336, 112);
+ 
 
   p.render();
   p2.render();
