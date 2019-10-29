@@ -7,9 +7,9 @@ boolean gameStart;
 void setup() {
   size(600, 800);
   under_pipe = loadImage("pipe-green.png");
-  under_pipe.resize(90,400);
+  under_pipe.resize(90,600);
   up_pipe = loadImage("up-pipe.png");
-  up_pipe.resize(90,400);
+  up_pipe.resize(90,600);
   bg = loadImage("background-night.png");
   bg.resize(width, height);
   base = loadImage("base.png");

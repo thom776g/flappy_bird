@@ -18,7 +18,7 @@ class Pipe {
   // Afbild røret på canvasset
   void render() {
     fill(255);
-    image(up_pipe, x, 0, w, y);
+    image(up_pipe, x, y-600);
     imageMode(CORNER);
     fill(255, 255, 255, 0);
     rect(x, y+h, w, height-y-h);
