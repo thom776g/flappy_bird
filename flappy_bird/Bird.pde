@@ -20,7 +20,7 @@ class Bird {
   // Afbild fuglen ved dens nuværende position
   void render() {
     imageMode(CENTER);
-    image(redbird, x, y, s-10, s);
+    image(redbird, x, y, s, s);
     fill(0);
     text(score, width/2, 50);
   }
