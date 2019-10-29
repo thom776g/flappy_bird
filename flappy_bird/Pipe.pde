@@ -7,11 +7,11 @@ class Pipe {
 
 
   // Constructor til nye pipes
-  Pipe(int tempX, int tempY) {
+  Pipe(int tempX) {
     x = tempX;
     dx = -3;
     w = 90;
-    y = tempY;
+    y = random(200, 600);
     h = 175;
   }
 
