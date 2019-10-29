@@ -23,7 +23,16 @@ class Bird {
     ellipse(x, y, s, s);
     imageMode(CENTER);
 
-    image(redbird_mid, x, y, s-10, s);
+    if (frameCount % 28 < 7) {
+      image(redbird_down, x, y);
+    } else {
+      if (frameCount % 28 > 13 && frameCount % 28 < 21) {
+        image(redbird_up, x, y);
+      } else {
+        image(redbird_mid, x, y);
+      }
+    }
+
     fill(0);
 
     text(score, width/2, 50);
