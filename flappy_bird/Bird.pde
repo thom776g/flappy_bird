@@ -19,9 +19,8 @@ class Bird {
 
   // Afbild fuglen ved dens nuværende position
   void render() {
-    fill(255, 255, 255, 0);
-    ellipse(x, y, s, s);
     imageMode(CENTER);
+
 
     if (frameCount % 28 < 7) {
       image(redbird_down, x, y);
@@ -34,6 +33,7 @@ class Bird {
     }
 
     fill(0);
+
 
     text(score, width/2, 50);
   }

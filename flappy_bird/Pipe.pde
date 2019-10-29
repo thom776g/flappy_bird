@@ -7,22 +7,23 @@ class Pipe {
 
 
   // Constructor til nye pipes
-  Pipe(int tempX, int tempY) {
+  Pipe(int tempX) {
     x = tempX;
     dx = -3;
     w = 90;
-    y = tempY;
+    y = random(200, 600);
     h = 175;
   }
 
   // Afbild røret på canvasset
   void render() {
     fill(255);
-    rect(x, 0, w, y);
+    image(up_pipe, x, y-600);
     imageMode(CORNER);
     fill(255, 255, 255, 0);
     
     rect(x, y+h, w, height-y-h);
+
 
     image(under_pipe, x, y+h);
 
