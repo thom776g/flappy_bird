@@ -7,7 +7,7 @@ boolean gameStart;
 void setup() {
   size(600, 800);
   under_pipe = loadImage("pipe-green.png");
-  under_pipe.resize(90,310);
+  under_pipe.resize(90,400);
   bg = loadImage("background-night.png");
   bg.resize(width, height);
   base = loadImage("base.png");
@@ -26,12 +26,13 @@ void draw() {
   image(bg, 0, 0, width, height);
   image(base, 0, height-112/2, 336, 112);
   image(base, 336, height-112/2, 336, 112);
-  b.render();
-  b.update();
+ 
   p.render();
   p2.render();
   p.update();
   p2.update();
+  b.render();
+  b.update();
 }
 
 void keyPressed() {
