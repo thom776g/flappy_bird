@@ -20,8 +20,21 @@ class Bird {
   // Afbild fuglen ved dens nuværende position
   void render() {
     imageMode(CENTER);
-    image(redbird, x, y, s, s);
+
+
+    if (frameCount % 28 < 7) {
+      image(redbird_down, x, y);
+    } else {
+      if (frameCount % 28 > 13 && frameCount % 28 < 21) {
+        image(redbird_up, x, y);
+      } else {
+        image(redbird_mid, x, y);
+      }
+    }
+
     fill(0);
+
+
     text(score, width/2, 50);
   }
 
@@ -45,5 +58,5 @@ class Bird {
       dy += -8;
       ready2flap = false;
     }
-  }
+  }  
 }

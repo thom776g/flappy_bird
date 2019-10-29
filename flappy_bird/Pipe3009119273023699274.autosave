@@ -1,3 +1,4 @@
+
 class Pipe {
   float x; // Rørets position
   float dx; // Rørets hastighed
@@ -7,23 +8,22 @@ class Pipe {
 
 
   // Constructor til nye pipes
-  Pipe(int tempX) {
+  Pipe(int tempX, int tempY) {
     x = tempX;
     dx = -3;
     w = 90;
-    y = random(200, 600);
+    y = tempY;
     h = 175;
   }
 
   // Afbild røret på canvasset
   void render() {
     fill(255);
-    image(up_pipe, x, y-600);
+    rect(x, 0, w, y);
     imageMode(CORNER);
     fill(255, 255, 255, 0);
     
     rect(x, y+h, w, height-y-h);
-
 
     image(under_pipe, x, y+h);
 
