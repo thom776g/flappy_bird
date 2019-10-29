@@ -22,7 +22,10 @@ class Bird {
     fill(255, 255, 255, 0);
     ellipse(x, y, s, s);
     imageMode(CENTER);
-    image(redbird, x, y, s-10, s);
+
+    image(redbird_mid, x, y, s-10, s);
+    fill(0);
+
     text(score, width/2, 50);
   }
 
@@ -46,5 +49,5 @@ class Bird {
       dy += -8;
       ready2flap = false;
     }
-  }
+  }  
 }

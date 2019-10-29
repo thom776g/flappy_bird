@@ -1,7 +1,7 @@
 Bird b;
 Pipe p;
 Pipe p2;
-PImage base, redbird, bg, under_pipe, over_pipe;
+PImage base, redbird_mid, redbird_up, redbird_down, bg, under_pipe, over_pipe;
 boolean gameStart;
 
 void setup() {
@@ -18,7 +18,9 @@ void setup() {
   p2 = new Pipe(width+425, int(random(200, 600)));
 
 
-  redbird = loadImage("redbird-midflap.png");
+  redbird_mid = loadImage("redbird-midflap.png");
+  redbird_up = loadImage("redbird_upflap.png");
+  redbird_down = loadImage("redbird_downflap.png");
 }
 
 void draw() {
