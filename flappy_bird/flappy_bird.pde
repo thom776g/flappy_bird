@@ -41,6 +41,9 @@ void draw() {
   p2.update();
   b.render();
   b.update();
+  if (hop == false) {
+    gameOver();
+  }
 
   //Kollisoner
   // SIDERNE
@@ -82,5 +85,30 @@ void keyPressed() {
 void keyReleased() {
   if (!b.ready2flap) {
     b.ready2flap = true;
+  }
+}
+
+void reset() {
+  hop = true;
+  b.ready2flap = true;
+  gameStart = false;
+  b.x = 150;
+  b.y = height/2;
+  b.score = 0;
+  b.dy = 0;
+
+  p.x = width+100;
+  p2.x = width+425;
+  p.y = random(200, 600);
+  p2.y = random(200, 600);
+  p.dx = -3;
+  p2.dx = -3;
+}
+
+void gameOver() {
+  if (keyPressed == true) {
+    if (key == ' ') {
+      reset();
+    }
   }
 }

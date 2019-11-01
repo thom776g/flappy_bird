@@ -41,7 +41,13 @@ class Bird {
       }
     }
     fill(0);
-    text(score, width/2, 50);
+    if (hop == true) {
+      text(score, width/2, 50);
+    } else {
+      image(loadImage("GM.png"),width/2,300);
+      textAlign(CENTER);
+      text(b.score, width/2, height/2);
+    }
   }
 
   // Opdater fuglens position
