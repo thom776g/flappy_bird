@@ -40,10 +40,7 @@ class Bird {
         }
       }
     }
-
     fill(0);
-
-
     text(score, width/2, 50);
   }
 
@@ -55,6 +52,9 @@ class Bird {
     if (y >= height-h/2) {
       y = height - h/2;
       dy = 0;
+      p.dx = 0;
+      p2.dx = 0;
+      hop = false;
     }
     if (dist(x, 0, p.x+p.w/2, 0) <= 1 || dist(x, 0, p2.x+p2.w/2, 0)<=1) {
       score += 1;
