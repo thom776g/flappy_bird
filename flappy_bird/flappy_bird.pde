@@ -1,10 +1,11 @@
 Bird b;
 Pipe p;
 Pipe p2;
-PImage base, redbird_down, redbird_mid, redbird_up, bg, under_pipe, up_pipe;
+PImage base, redbird_down, redbird_mid, redbird_up, bg, bg2, under_pipe, up_pipe;
 boolean gameStart;
 boolean hop = true;
 int x1, x2, x3, y;
+int Day_or_night = int(random(0,3));
 
 void setup() {
   size(600, 800);
@@ -13,9 +14,10 @@ void setup() {
   under_pipe.resize(90, 600);
   up_pipe = loadImage("up-pipe.png");
   up_pipe.resize(90, 600);
-
   bg = loadImage("background-night.png");
+  bg2 = loadImage("background-day.png");
   bg.resize(width, height);
+  bg2.resize(width,height);
   base = loadImage("base.png");
   noStroke();
   gameStart = false;
@@ -34,8 +36,12 @@ void setup() {
 
 void draw() {
   imageMode(CORNER);
+  if (Day_or_night == 1){
   image(bg, 0, 0, width, height);
-
+  }
+  else {
+    image(bg2, 0, 0, width, height);
+  }
 
   p.render();
   p2.render();
@@ -43,6 +49,9 @@ void draw() {
   p2.update();
   b.render();
   b.update();
+  if (hop == false) {
+    gameOver();
+  }
 
  imageMode(CORNER);
   x1 = x1-3;
@@ -109,5 +118,31 @@ void keyPressed() {
 void keyReleased() {
   if (!b.ready2flap) {
     b.ready2flap = true;
+  }
+}
+
+void reset() {
+  hop = true;
+  b.ready2flap = true;
+  gameStart = false;
+  b.x = 150;
+  b.y = height/2;
+  b.score = 0;
+  b.dy = 0;
+
+  p.x = width+100;
+  p2.x = width+425;
+  p.y = random(200, 600);
+  p2.y = random(200, 600);
+  p.dx = -3;
+  p2.dx = -3;
+  Day_or_night = int(random(0,3));
+}
+
+void gameOver() {
+  if (keyPressed == true) {
+    if (key == ' ') {
+      reset();
+    }
   }
 }
