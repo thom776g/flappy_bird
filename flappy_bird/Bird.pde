@@ -23,14 +23,21 @@ class Bird {
   void render() {
     imageMode(CENTER);
 
-
-    if (frameCount % 28 < 7) {
-      image(redbird_down, x, y);
-    } else {
-      if (frameCount % 28 > 13 && frameCount % 28 < 21) {
-        image(redbird_up, x, y);
-      } else {
+    if (hop == false) {
+      image(redbird_mid, x, y);
+    } else { 
+      if (dy >= 10 || dy == 0 ) {
         image(redbird_mid, x, y);
+      } else { 
+        if (frameCount % 28 < 7) {
+          image(redbird_down, x, y);
+        } else {
+          if (frameCount % 28 > 13 && frameCount % 28 < 21) {
+            image(redbird_up, x, y);
+          } else {
+            image(redbird_mid, x, y);
+          }
+        }
       }
     }
 
@@ -60,5 +67,5 @@ class Bird {
       dy += -8;
       ready2flap = false;
     }
-  }  
+  }
 }
