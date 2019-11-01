@@ -1,10 +1,11 @@
 Bird b;
 Pipe p;
 Pipe p2;
-PImage base, redbird_down, redbird_mid, redbird_up, bg, under_pipe, up_pipe;
+PImage base, redbird_down, redbird_mid, redbird_up, bg, bg2, under_pipe, up_pipe;
 boolean gameStart;
 boolean hop = true;
 int x1, x2, x3, y;
+int Day_or_night = int(random(0,3));
 
 void setup() {
   size(600, 800);
@@ -13,9 +14,10 @@ void setup() {
   under_pipe.resize(90, 600);
   up_pipe = loadImage("up-pipe.png");
   up_pipe.resize(90, 600);
-
   bg = loadImage("background-night.png");
+  bg2 = loadImage("background-day.png");
   bg.resize(width, height);
+  bg2.resize(width,height);
   base = loadImage("base.png");
   noStroke();
   gameStart = false;
@@ -34,8 +36,12 @@ void setup() {
 
 void draw() {
   imageMode(CORNER);
+  if (Day_or_night == 1){
   image(bg, 0, 0, width, height);
-
+  }
+  else {
+    image(bg2, 0, 0, width, height);
+  }
 
   p.render();
   p2.render();
@@ -130,6 +136,7 @@ void reset() {
   p2.y = random(200, 600);
   p.dx = -3;
   p2.dx = -3;
+  Day_or_night = int(random(0,3));
 }
 
 void gameOver() {
