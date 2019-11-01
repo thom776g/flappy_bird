@@ -40,8 +40,15 @@ class Bird {
         }
       }
     }
-    fill(0);
-    text(score, width/2, 50);
+    fill(255);
+    if (hop == true) {
+      text(score, width/2, 50);
+    } else {
+      image(loadImage("GM.png"), width/2, 275, 300, 75);
+      textAlign(CENTER);
+      text(b.score, width/2, height/2);
+      text("Press space to restart", width/2, 475);
+    }
   }
 
   // Opdater fuglens position
