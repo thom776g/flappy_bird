@@ -11,7 +11,7 @@ class Pipe {
     x = tempX;
     dx = -3;
     w = 90;
-    y = random(200, 500);
+    y = random(200, 450);
     h = 150;
   }
 
