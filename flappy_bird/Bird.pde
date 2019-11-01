@@ -23,6 +23,7 @@ class Bird {
   void render() {
     imageMode(CENTER);
 
+//Animation af fuglen
     if (hop == false) {
       image(redbird_mid, x, y);
     } else { 
@@ -40,6 +41,7 @@ class Bird {
         }
       }
     }
+    
     fill(0);
     text(score, width/2, 50);
   }
@@ -49,8 +51,8 @@ class Bird {
     dy += ddy;
     y += dy;
 
-    if (y >= height-h/2) {
-      y = height - h/2;
+    if (y >= height-h/2-112/2) {
+      y = height - h/2-112/2;
       dy = 0;
       p.dx = 0;
       p2.dx = 0;

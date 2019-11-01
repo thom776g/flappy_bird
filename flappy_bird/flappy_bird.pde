@@ -89,7 +89,7 @@ void draw() {
     hop = false;
   }
   //  TOP OG BUND
-  if ((b.y-b.h/2 <= p2.y||b.y+b.h/2 > p2.y+p2.h ) &&  (b.x-b.w/2 < p2.x+p2.w && b.x+b.w/2 > p2.x)) {
+  if ((b.y+b.h/2 > p2.y+p2.h ) &&  (b.x-b.w/2 < p2.x+p2.w && b.x+b.w/2 > p2.x)) {
     p.dx = 0;
     p2.dx = 0;
     hop = false;

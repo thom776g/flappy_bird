@@ -11,8 +11,8 @@ class Pipe {
     x = tempX;
     dx = -3;
     w = 90;
-    y = random(200, 600);
-    h = 175;
+    y = random(200, 500);
+    h = 150;
   }
 
   // Afbild røret på canvasset
