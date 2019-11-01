@@ -4,6 +4,7 @@ Pipe p2;
 PImage base, redbird_down, redbird_mid, redbird_up, bg, under_pipe, up_pipe;
 boolean gameStart;
 boolean hop = true;
+int x1, x2, x3, y;
 
 void setup() {
   size(600, 800);
@@ -21,7 +22,10 @@ void setup() {
   b = new Bird();
   p = new Pipe(width+100 );
   p2 = new Pipe(width+425);
-
+  
+  x1 = 0;
+  x2 = x1 + 336;
+  x3 = x2 + 336;
 
   redbird_mid = loadImage("redbird-midflap.png");
   redbird_down = loadImage("redbird-downflap.png");
@@ -31,8 +35,6 @@ void setup() {
 void draw() {
   imageMode(CORNER);
   image(bg, 0, 0, width, height);
-  image(base, 0, height-112/2, 336, 112);
-  image(base, 336, height-112/2, 336, 112);
 
 
   p.render();
@@ -41,6 +43,31 @@ void draw() {
   p2.update();
   b.render();
   b.update();
+
+ imageMode(CORNER);
+  x1 = x1-3;
+  x2 = x2-3;
+  x3 = x3-3;
+
+  image(base, x1, height-112/2);
+  image(base, x2, height-112/2);
+  image(base, x3, height-112/2);
+
+  if (hop == true) {
+    if (x1 <= - 336) {
+      x1 = x3 + 336;
+    } 
+    if (x2 <= -336) {
+      x2 = x1 + 336;
+    } 
+    if (x3 <= -336) {
+      x3 = x2 + 336;
+    }
+  } else {
+    x1 = 0;
+    x2 = x1 + 336;
+    x3 = x2 + 336;
+  }
 
   //Kollisoner
   // SIDERNE
