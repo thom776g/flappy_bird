@@ -4,14 +4,18 @@ class Pipe {
   float w; // Rørets bredde
   float y; // Hullets øvre position
   float h; // Hullets størrelse
+  float min; //Min for hullets øvre position
+  float max; //Min for hullets nedre position
 
 
   // Constructor til nye pipes
   Pipe(int tempX) {
     x = tempX;
     dx = -3;
+    min = 200;
+    max = 450;
     w = 90;
-    y = random(200, 450);
+    y = random(min, max);
     h = 150;
   }
 
@@ -21,12 +25,7 @@ class Pipe {
     image(up_pipe, x, y-600);
     imageMode(CORNER);
     fill(255, 255, 255, 0);
-    
-    rect(x, y+h, w, height-y-h);
-
-
     image(under_pipe, x, y+h);
-
   }
 
   // Opdater rørets position
@@ -36,7 +35,7 @@ class Pipe {
     }
     if (outOfCanvas() == true) {
       x = width;
-      y = random(200, 600);
+      y = random(min, max);
     }
   }
 
